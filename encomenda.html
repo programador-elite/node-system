@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Node System</title>
+</head>
+
+<body>
+    <header>
+        <a href="index.html"><img src="img/node.system.webp" alt="logo node system"></a>
+        <a href="index.html" id="inicio">
+            <h1>Node System</h1>
+        </a>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">Inicio</a>
+                </li>
+                <br>
+                <li>
+                    <a href="produtos.html">Planos</a>
+                </li>
+                <br>
+                <li>
+                    <a href="encomenda.html" style="color: white;">Encomendar</a>
+                </li>
+                <br>
+                <li>
+                    <a href="hospedar.html">Hospedagem</a>
+                </li>
+                <br>
+                <li>
+                    <a href="https://discord.gg/SHx5Krt7qw">Discord</a>
+                </li>
+                <br>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="card">
+                <h2>Encomenda Node system</h2>
+                <br>
+                <div id="border"></div>
+                <br>
+                <p>Faça sua encomenda e impulsione o seu servidor!</p>
+                <br>
+                <ul>
+                    <p>✓ Suporte rápido</p>
+                    <p>✓ Sites e bots personalizaveis</p>
+                    <p>✓ Dominios personalizados</p>
+                    <p>✓ Hospedagem 24 horas</p>
+                    <p>✓ Melhores sistemas do mercado</p>
+                    <p>✓ Sites e bots rápidos e eficientes</p>
+                    <p>☓ Vuco vuco</p>
+                    <p>☓ Gerar dinheiro</p>
+                    <br>
+                    <p id="card-plus"><i>* Impulsione o seu servidor com sua aplicação
+                            personalizada!</i></p>
+                </ul>
+            </div>
+            <div class="formulario-container">
+                <form id="meuFormulario">
+                    <H1><strong>Encomendar</strong></H1>
+                    <div id="border"></div>
+                    <br>
+                    <input type="text" id="nome" name="nome" placeholder="Nome"><br><br>
+                    <input type="email" id="email" name="email" placeholder="Email"><br><br>
+                    <textarea id="mensagem" name="mensagem" placeholder="Encomenda"></textarea><br><br>
+                    <p><i>* Você será respondido por email dentro de 24 horas úteis.</i></p>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">Inicio</a>
+                </li>
+                <br>
+                <li>
+                    <a href="produtos.html">Planos</a>
+                </li>
+                <br>
+                <li>
+                    <a href="encomenda.html" style="color: white;"">Encomendar</a>
+                </li>
+                <br>
+                <li>
+                    <a href=" hospedar.html">Hospedagem</a>
+                </li>
+                <br>
+                <li>
+                    <a href="https://discord.gg/SHx5Krt7qw">Discord</a>
+                </li>
+                <br>
+            </ul>
+        </nav>
+        <p><i>© 2025 <a href="https://discord.gg/SHx5Krt7qw" class="link-footer">Node System.</a> Todos os direitos
+                reservados.</i></p>
+    </footer>
+
+    <script src="//code.jivosite.com/widget/5dCx4UW5OW" async></script>
+    <script>
+        document.getElementById("meuFormulario").addEventListener("submit", function (event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            const nome = document.getElementById("nome").value;
+            const email = document.getElementById("email").value;
+            const mensagem = document.getElementById("mensagem").value;
+
+            const webhookURL = "https://discord.com/api/webhooks/1348255610134728755/MtsCCCYUNAx-5JdUn9ADMdfVn_uMxtz5Ni7yLD-0uww2CotHcQcQMB_zbYPUxsroCriA"; // Substitua pela URL do seu webhook
+
+            fetch(webhookURL, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    content: `**Novo formulário enviado!**\n\n**Nome:** ${nome}\n**E-mail:** ${email}\n**Mensagem:** ${mensagem}`
+                })
+            })
+                .then(response => {
+                    if (response.ok) {
+                        alert("Mensagem enviada com sucesso!");
+                    } else {
+                        alert("Erro ao enviar a mensagem.");
+                    }
+                });
+        });
+    </script>
+</body>
+
+</html>

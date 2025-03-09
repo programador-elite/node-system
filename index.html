@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Node System</title>
+</head>
+
+<body>
+    <header>
+        <a href="index.html"><img src="img/node.system.webp" alt="logo node system"></a>
+        <a href="index.html" id="inicio">
+            <h1>Node System</h1>
+        </a>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html" style="color: white;">Inicio</a>
+                </li>
+                <br>
+                <li>
+                    <a href="produtos.html">Planos</a>
+                </li>
+                <br>
+                <li>
+                    <a href="encomenda.html">Encomendar</a>
+                </li>
+                <br>
+                <li>
+                    <a href="hospedar.html">Hospedagem</a>
+                </li>
+                <br>
+                <li>
+                    <a href="https://discord.gg/SHx5Krt7qw">Discord</a>
+                </li>
+                <br>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <br><br><br><br>
+        <section id="section">
+            <h2>Node System</h2>
+            <h3 id="dynamic-title"><span id="text"></span><span class="cursor"></span></h3>
+            <h6>A solução ideal para transformar o seu servidor Discord em uma ferramenta poderosa e eficiente.</h6>
+            <br>
+            <a href="produtos.html" class="botao-link">Ver nossos produtos</a>
+        </section>
+    </main>
+    <footer>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html" style="color: white;">Inicio</a>
+                </li>
+                <br>
+                <li>
+                    <a href="produtos.html">Planos</a>
+                </li>
+                <br>
+                <li>
+                    <a href="encomenda.html">Encomendar</a>
+                </li>
+                <br>
+                <li>
+                    <a href="hospedar.html">Hospedagem</a>
+                </li>
+                <br>
+                <li>
+                    <a href="https://discord.gg/SHx5Krt7qw">Discord</a>
+                </li>
+                <br>
+            </ul>
+        </nav>
+        <p><i>© 2025 <a href="https://discord.gg/SHx5Krt7qw" class="link-footer">Node System.</a> Todos os direitos
+                reservados.</i></p>
+    </footer>
+
+    <script src="//code.jivosite.com/widget/5dCx4UW5OW" async></script>
+    <script>
+        const titles = ["Criamos o seu bot!", "Seu site do seu jeito!", "Hospede suas aplicações!"];
+        let index = 0;
+        const textElement = document.getElementById("text");
+
+        function typeTitle(title, callback) {
+            let i = 0;
+            const interval = setInterval(() => {
+                if (i < title.length) {
+                    textElement.textContent += title.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(interval);
+                    setTimeout(callback, 2000); // Espera 2 segundos antes de apagar
+                }
+            }, 100); // Velocidade de digitação
+        }
+
+        function eraseTitle(callback) {
+            const title = textElement.textContent;
+            let i = title.length;
+            const interval = setInterval(() => {
+                if (i > 0) {
+                    textElement.textContent = title.substring(0, i - 1);
+                    i--;
+                } else {
+                    clearInterval(interval);
+                    callback(); // Chama o callback imediatamente após apagar
+                }
+            }, 90); // Velocidade de apagamento
+        }
+
+        function cycleTitles() {
+            typeTitle(titles[index], () => {
+                eraseTitle(() => {
+                    index = (index + 1) % titles.length; // Muda para o próximo título
+                    cycleTitles(); // Chama a função novamente
+                });
+            });
+        }
+
+        cycleTitles(); // Inicia o ciclo
+    </script>
+</body>
+
+</html>
